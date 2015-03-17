@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/layout_width"
+    android:layout_height="@dimen/layout_height"
+    android:background="@drawable/background">
+
+    <include
+        android:id="@+id/logo"
+        layout="@layout/view_title_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_logo_layout"
+        android:layout_alignParentTop="true" />
+
+    <include
+        android:id="@+id/title_text"
+        layout="@layout/view_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_button"
+        android:layout_below="@+id/title_text"
+        android:layout_marginTop="@dimen/height_layout_top">
+
+        <TextView
+            android:id="@+id/currency_num_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/content_left_distance"
+            android:textColor="@color/white"
+            android:text="@string/welcome"
+            android:textSize="@dimen/text_large_size" />
+
+        <TextView
+            android:id="@+id/bit_num_text"
+            android:layout_below="@+id/currency_num_text"
+            android:layout_marginTop="60px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/content_left_distance"
+            android:textColor="@color/white"
+            android:text="@string/welcome"
+            android:textSize="@dimen/text_large_size" />
+
+        <TextView
+            android:id="@+id/cash_notes_text"
+            android:layout_below="@+id/bit_num_text"
+            android:layout_marginTop="60px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/content_left_distance"
+            android:textColor="@color/white"
+            android:text="@string/buy_cash_note"
+            android:textSize="@dimen/text_large_size" />
+
+        <TextView
+            android:id="@+id/cash_num_text"
+            android:layout_below="@+id/bit_num_text"
+            android:layout_toRightOf="@+id/cash_notes_text"
+            android:layout_marginTop="60px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/cash_notes_text"
+            android:layout_marginLeft="@dimen/content_left_distance"
+            android:textColor="@color/bright"
+            android:textSize="@dimen/text_big_large_size" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/bottom_button"
+        layout="@layout/view_bottom_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_bottom_button_layout"
+        android:layout_above="@+id/bottom_text" />
+
+    <include
+        android:id="@+id/bottom_text"
+        layout="@layout/view_bottom_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_bottom_text_layout"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

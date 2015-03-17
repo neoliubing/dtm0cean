@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/layout_width"
+    android:layout_height="@dimen/layout_height"
+    android:background="@drawable/background">
+
+    <include
+        android:id="@+id/logo"
+        layout="@layout/view_title_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_logo_layout"
+        android:layout_alignParentTop="true"
+        android:clickable="true" />
+
+    <RelativeLayout
+        android:id="@+id/click_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_text"
+        android:layout_below="@+id/logo"
+        android:clickable="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0px"
+            android:text="@string/welcome"
+            android:textColor="@color/white"
+            android:textSize="200px" />
+
+        <TextView
+            android:id="@+id/touch_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/welcome_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20px"
+            android:text="@string/touch"
+            android:textColor="@color/bright"
+            android:textSize="@dimen/text_large_size" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_text"
+        android:layout_marginBottom="20px"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/language_english_btn"
+            android:layout_width="118px"
+            android:layout_height="81px"
+            android:background="@drawable/australia" />
+
+        <Button
+            android:id="@+id/language_china_btn"
+            android:layout_width="118px"
+            android:layout_height="81px"
+            android:layout_marginLeft="20px"
+            android:layout_toRightOf="@+id/language_english_btn"
+            android:background="@drawable/china" />
+
+        <Button
+            android:id="@+id/language_japan_btn"
+            android:layout_width="118px"
+            android:layout_height="81px"
+            android:layout_marginLeft="20px"
+            android:layout_toRightOf="@+id/language_china_btn"
+            android:background="@drawable/japan" />
+    </RelativeLayout>
+
+
+    <include
+        android:id="@+id/bottom_text"
+        layout="@layout/view_bottom_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_bottom_text_layout"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

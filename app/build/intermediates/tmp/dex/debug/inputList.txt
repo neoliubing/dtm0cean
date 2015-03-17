@@ -1,0 +1,14 @@
+D:\Code\viewpager\dtm\app\build\intermediates\classes\debug
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-aa16b3cf885393ef74ba8407c65bcf20627dd05b.jar
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\eventbus-2fa2ba623ffcd12ad326216a00ed678fac3f2ed0.jar
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\android-integration-2.3.0-40196bf0662ec12141577d2243ae1bd7c486b523.jar
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.4-236844f4b657e3c271b743e4742736de3ac56ee4.jar
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\volley-7a443f5c43ecd5efd80b612f631b92851b6ae727.jar
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\umeng-update-v2.4.2-9beb15edfff4f8c8f98cc0c38004fdef5f59a771.jar
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-875e6d9655f27b5843ae17dafbe4e145ed657b2d.jar
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\trinea-1c86dc2aff977129c63cc15cdca71594555f898f.jar
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\umeng-analytics-v5.2.4-51582fc411f0ad517cdfc4adb356e5efd85861fb.jar
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\classes-cf30a940dcbf27abf5d135def0d8cd804f5b50ae.jar
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\classes-745df5a6ccecd1e2a069135b45e58b940afbfe7e.jar
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\guava-13.0.1-441cce9f0f397926b961b12a39a73d75114995ff.jar
+D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\core-2.3.0-1a26b1f3a88a0a04c04421d780b19c6937bb0ed3.jar

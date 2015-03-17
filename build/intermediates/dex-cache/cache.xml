@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Code\viewpager\dtm\app\libs\guava-13.0.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0d6f22b1e60a2f1ef99e22c9f5fde270b2088365">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\guava-13.0.1-441cce9f0f397926b961b12a39a73d75114995ff.jar" />
+    </item>
+    <item
+        jar="D:\Code\viewpager\dtm\app\libs\umeng-update-v2.4.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ee700e317f574886dc0a236b801f219df6fbd26d">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\umeng-update-v2.4.2-9beb15edfff4f8c8f98cc0c38004fdef5f59a771.jar" />
+    </item>
+    <item
+        jar="D:\Code\viewpager\dtm\app\libs\volley.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f038c6fc1df192afe6b5aef3c0dbb6fc2e7478f1">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\volley-7a443f5c43ecd5efd80b612f631b92851b6ae727.jar" />
+    </item>
+    <item
+        jar="D:\Code\viewpager\dtm\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-875e6d9655f27b5843ae17dafbe4e145ed657b2d.jar" />
+    </item>
+    <item
+        jar="D:\Code\viewpager\dtm\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\classes-cf30a940dcbf27abf5d135def0d8cd804f5b50ae.jar" />
+    </item>
+    <item
+        jar="D:\Code\viewpager\dtm\app\libs\android-async-http-1.4.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3bae85a076241828810bf8fbcc12e5891d5fc34c">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.4-236844f4b657e3c271b743e4742736de3ac56ee4.jar" />
+    </item>
+    <item
+        jar="D:\Code\viewpager\dtm\app\libs\core-2.3.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9fd4bcf5408ca723ba816216ea1f9a7ef7cba527">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\core-2.3.0-1a26b1f3a88a0a04c04421d780b19c6937bb0ed3.jar" />
+    </item>
+    <item
+        jar="D:\Code\viewpager\dtm\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\classes-745df5a6ccecd1e2a069135b45e58b940afbfe7e.jar" />
+    </item>
+    <item
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-aa16b3cf885393ef74ba8407c65bcf20627dd05b.jar" />
+    </item>
+    <item
+        jar="D:\Code\viewpager\dtm\app\libs\eventbus.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="bce1c8d061ecc7d7664ae13bb5d29543ff93ca52">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\eventbus-2fa2ba623ffcd12ad326216a00ed678fac3f2ed0.jar" />
+    </item>
+    <item
+        jar="D:\Code\viewpager\dtm\app\libs\android-integration-2.3.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="349e1c0a77aa3a0b069e84b4507a04866319073f">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\android-integration-2.3.0-40196bf0662ec12141577d2243ae1bd7c486b523.jar" />
+    </item>
+    <item
+        jar="D:\Code\viewpager\dtm\app\libs\trinea.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="210e8f1b5c6c86f4b568deb85dbf8d1fb513cbaa">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\trinea-1c86dc2aff977129c63cc15cdca71594555f898f.jar" />
+    </item>
+    <item
+        jar="D:\Code\viewpager\dtm\app\libs\umeng-analytics-v5.2.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="124e0c15ac2b0b061ad4e68fc6ac0a32f33e2b33">
+        <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\umeng-analytics-v5.2.4-51582fc411f0ad517cdfc4adb356e5efd85861fb.jar" />
+    </item>
+
+</items>

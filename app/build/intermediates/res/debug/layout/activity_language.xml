@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/layout_width"
+    android:layout_height="@dimen/layout_height"
+    android:background="@drawable/background">
+
+    <include
+        android:id="@+id/logo"
+        layout="@layout/view_title_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_logo_layout"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/view_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wait"
+        android:padding="0px"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/title_x"
+        android:layout_marginTop="@dimen/title_y"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_big_large_size" />
+
+    <include
+        android:id="@+id/bottom_text"
+        layout="@layout/view_bottom_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_bottom_text_layout"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout><!-- From: file:/D:/Code/dtm0cean/app/src/main/res/layout/activity_language.xml -->

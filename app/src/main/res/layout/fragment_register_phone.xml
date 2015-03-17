@@ -1,0 +1,168 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/layout_width"
+    android:layout_height="@dimen/layout_height"
+    android:background="@drawable/background">
+
+    <include
+        android:id="@+id/logo"
+        layout="@layout/view_title_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_logo_layout"
+        android:layout_alignParentTop="true" />
+
+    <include
+        android:id="@+id/title_text"
+        layout="@layout/view_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_button"
+        android:layout_below="@+id/title_text"
+        android:layout_marginTop="@dimen/photo_scan_top">
+
+        <RelativeLayout
+            android:id="@+id/name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/name_edit"
+                android:text="@string/user_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large_size" />
+
+            <EditText
+                android:id="@+id/name_edit"
+                android:layout_width="@dimen/edit_view_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="240px"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large_size" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_layout"
+            android:layout_marginTop="20px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/password_edit"
+                android:text="@string/user_password"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large_size" />
+
+            <EditText
+                android:id="@+id/password_edit"
+                android:layout_width="@dimen/edit_view_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="240px"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large_size" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/phone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password_layout"
+            android:layout_marginTop="20px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/phone_edit"
+                android:text="@string/register_phone_num"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large_size" />
+
+            <EditText
+                android:id="@+id/phone_edit"
+                android:layout_width="@dimen/edit_view_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="240px"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large_size" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/verify_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phone_layout"
+            android:layout_marginTop="20px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/verify_edit"
+                android:text="@string/register_get_verify"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large_size" />
+
+            <EditText
+                android:id="@+id/verify_edit"
+                android:layout_width="400px"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="440px"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large_size" />
+
+            <Button
+                android:id="@+id/verify_btn"
+                android:layout_width="@dimen/width_button"
+                android:layout_height="@dimen/height_button"
+                android:layout_marginLeft="-440px"
+                android:layout_toRightOf="@+id/verify_edit"
+                android:layout_alignBaseline="@+id/verify_edit"
+                android:background="@drawable/btn"
+                android:padding="0dp"
+                android:text="@string/register_get_verify"
+                android:textSize="@dimen/text_normal_size"
+                android:textColor="@color/bright" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/bottom_button"
+        layout="@layout/view_bottom_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_bottom_button_layout"
+        android:layout_above="@+id/bottom_text" />
+
+    <include
+        android:id="@+id/bottom_text"
+        layout="@layout/view_bottom_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_bottom_text_layout"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

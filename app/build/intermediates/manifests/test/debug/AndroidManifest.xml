@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bitocean.dtm.test">
+
+    <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="21" />
+
+    <application>
+        <uses-library android:name="android.test.runner" />
+    </application>
+
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+                     android:targetPackage="com.bitocean.dtm"
+                     android:handleProfiling="false"
+                     android:functionalTest="false"
+                     android:label="Tests for com.bitocean.dtm"/>
+</manifest>

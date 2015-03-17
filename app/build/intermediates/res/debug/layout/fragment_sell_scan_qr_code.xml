@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/layout_width"
+    android:layout_height="@dimen/layout_height"
+    android:background="@drawable/background">
+
+    <include
+        android:id="@+id/logo"
+        layout="@layout/view_title_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_logo_layout"
+        android:layout_alignParentTop="true" />
+
+    <include
+        android:id="@+id/title_text"
+        layout="@layout/view_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_button"
+        android:layout_below="@+id/title_text"
+        android:layout_marginTop="@dimen/photo_scan_top">
+
+        <TextView
+            android:id="@+id/flow_prompt_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/sell_qr_code_flow_prompt"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_large_size" />
+
+        <ImageView
+            android:id="@+id/qr_image"
+            android:layout_width="300px"
+            android:layout_height="300px"
+            android:layout_below="@+id/flow_prompt_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10px" />
+
+        <TextView
+            android:id="@+id/large_prompt_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_below="@+id/qr_image"
+            android:layout_marginTop="10px"
+            android:text="@string/sell_qr_code_large_prompt"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_large_size"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/bottom_button"
+        layout="@layout/view_bottom_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_bottom_button_layout"
+        android:layout_above="@+id/bottom_text" />
+
+    <include
+        android:id="@+id/bottom_text"
+        layout="@layout/view_bottom_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_bottom_text_layout"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout><!-- From: file:/D:/Code/dtm0cean/app/src/main/res/layout/fragment_sell_scan_qr_code.xml -->
