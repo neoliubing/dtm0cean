@@ -75,7 +75,7 @@ public class SellScanQRCodeFragment extends NodeFragment {
         if (struct != null)
             qr_image.setImageBitmap(Util.generateQRCode(struct.bitcoin_qr));
 
-        if (struct.quota_num == 0) {
+        if (struct.quota_num <= currency_num) {
             TextView large_prompt_text = (TextView) v
                     .findViewById(R.id.large_prompt_text);
             large_prompt_text.setVisibility(View.VISIBLE);
@@ -92,6 +92,7 @@ public class SellScanQRCodeFragment extends NodeFragment {
                 Bundle b = new Bundle();
 //                b.putString("user_public_key", user_public_key);
                 b.putString("bitcoin_qr", struct.bitcoin_qr);
+                b.putString("tradeid", struct.tradeid);
                 b.putInt("currency_num", currency_num);
                 b.putInt("process_event", process_event);
                 b.putString("bit_num", bit_num);

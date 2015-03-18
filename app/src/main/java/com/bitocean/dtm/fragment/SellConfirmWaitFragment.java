@@ -30,6 +30,7 @@ public class SellConfirmWaitFragment extends NodeFragment {
 //    private String user_public_key = null;
     private String bitcoin_qr = null;
     private String bit_num = null;
+    private String tradeid = null;
     private int process_event = 0;
     private int currency_num = 0;
     private boolean isLoop = true;
@@ -48,6 +49,7 @@ public class SellConfirmWaitFragment extends NodeFragment {
         process_event = (int) b.getInt("process_event", 0);
         currency_num = (int) b.getInt("currency_num", 0);
         bit_num = (String) b.getString("bit_num");
+        tradeid = (String) b.getString("tradeid");
         return;
     }
 
@@ -105,7 +107,7 @@ public class SellConfirmWaitFragment extends NodeFragment {
         Thread sellThread = new Thread() {
             public void run() {
                 while (isLoop) {
-                    NetServiceManager.getInstance().SellBitcoin(AppManager.getUserId(), currency_num, bitcoin_qr);
+                    NetServiceManager.getInstance().SellBitcoin(AppManager.getUserId(), currency_num, bitcoin_qr, bit_num, tradeid);
                     try {
                         sleep(6000);
                     } catch (InterruptedException e) {
@@ -138,7 +140,7 @@ public class SellConfirmWaitFragment extends NodeFragment {
                         Util.printSellCoin(String.valueOf(struct.currency_num));
                     }
 
-                    DBTools.getInstance().insertSellTranData(struct.trans_id, AppManager.getUserId(),
+                    DBTools.getInstance().insertSellTranData(struct.txid, AppManager.getUserId(),
                             "sell", "success", String.valueOf(struct.reason), AppManager.DTM_UUID, AppManager.getCurrentTime(),
                             AppManager.DTM_CURRENCY, String.valueOf(struct.currency_num), "", "");
                     DBTools.getInstance().closeDB();
@@ -169,7 +171,7 @@ public class SellConfirmWaitFragment extends NodeFragment {
                             break;
                     }
                     new Util(getActivity()).showFeatureToast(msgString);
-                    DBTools.getInstance().insertSellTranData(struct.trans_id, AppManager.getUserId(),
+                    DBTools.getInstance().insertSellTranData(struct.txid, AppManager.getUserId(),
                             "sell", "fail", String.valueOf(struct.reason), AppManager.DTM_UUID, AppManager.getCurrentTime(),
                             AppManager.DTM_CURRENCY, String.valueOf(struct.currency_num), "", "");
                     DBTools.getInstance().closeDB();

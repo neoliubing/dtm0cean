@@ -191,7 +191,8 @@ public class ProtocolDataInput {
             struct.resutlString = obj.getString("result");
             struct.reason = obj.getInt("reason");
             struct.bitcoin_qr = obj.getString("bitcoin_qr");
-            struct.quota_num = obj.getDouble("quota_num");
+            struct.tradeid = obj.getString("tradeid");
+            struct.quota_num = obj.getInt("fast_threshold");
             return struct;
         } catch (JSONException ex) {
             ex.printStackTrace();
@@ -213,7 +214,6 @@ public class ProtocolDataInput {
             struct.reason = obj.getInt("reason");
             struct.dtm_currency = obj.getString("dtm_currency");
             struct.currency_num = obj.getInt("currency_num");
-            struct.trans_id = obj.getString("transid");
             struct.redeem_code = obj.getString("redeem_code");
             struct.txid = obj.getString("txid");
             if (AppManager.getUserStruct() != null)

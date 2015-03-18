@@ -130,8 +130,6 @@ public class ScanUserKeyFragment extends NodeFragment {
             if (requestCode == 1) {
                 Bundle bundle = data.getExtras();
                 user_public_key = bundle.getString("result");
-//                //TODO 测试公钥
-//                user_public_key = "1JZziYk8uo7tvqM3n6j2z4Jzo2ncudZ2K7";
                 // 显示
                 qr_image.setImageBitmap((Bitmap) data
                         .getParcelableExtra("bitmap"));

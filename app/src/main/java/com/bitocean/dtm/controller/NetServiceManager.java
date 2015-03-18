@@ -56,8 +56,8 @@ public class NetServiceManager extends BaseManager {
     private static final String NET_GET_RATE_LIST = "http://54.64.141.230:8081/exchange_rate/";
     private static final String NET_REDEEM_CONFIRM = NET_SERVER
             + "redeemconfirm_bit.py";
-    private static final String NET_SELL_QR_CODE = NET_SERVER + "sellqr_bit.py";
-    private static final String NET_SELL_BITCOIN = NET_SERVER + "sell_bit.py";
+    private static final String NET_SELL_QR_CODE = "http://54.64.141.230:8081/trade/getsellqr/";
+    private static final String NET_SELL_BITCOIN = "http://54.64.141.230:8081/trade/confirmsell/";
     //    private static final String NET_BUY_QR_BITCOIN = NET_SERVER + "buy_qr_bit.py";
     private static final String NET_BUY_QR_BITCOIN = "http://54.64.141.230:8081/trade/qrbuycoin/";
     //    private static final String NET_BUY_WALLET_BITCOIN = NET_SERVER + "buy_wallet_bit.py";
@@ -462,12 +462,12 @@ public class NetServiceManager extends BaseManager {
 
     // 卖币确认
     public void SellBitcoin(String user_id,
-                            int currency_num, String bitcoin_qr) {
+                            int currency_num, String bitcoin_qr, String amount, String tradeid) {
         RequestQueue mQueue = Volley.newRequestQueue(BitOceanATMApp
                 .getContext());
         try {
             JSONObject obj = ProtocolDataOutput.getSellBitcoinConfirm(
-                    user_id, currency_num, bitcoin_qr);
+                    user_id, currency_num, bitcoin_qr, amount, tradeid);
             mQueue.add(new JsonObjectRequest(Method.POST, NET_SELL_BITCOIN,
                     obj, new Listener() {
 

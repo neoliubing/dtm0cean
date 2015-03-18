@@ -177,8 +177,8 @@ public class L1000SDKManager extends BaseManager {
                 datahandler(readbuffer, size);
                 super.sleep(500);
 
-                while (dspsnum > 20) {
-                    l1000dispense(20);
+                while (dspsnum > 5) {
+                    l1000dispense(5);
                     super.sleep(1500);
                     size = mInputStream.read(readbuffer);
                     datahandler(readbuffer, size);
@@ -208,7 +208,7 @@ public class L1000SDKManager extends BaseManager {
                     size = mInputStream.read(readbuffer);
                     datahandler(readbuffer, size);
                     super.sleep(500);
-                    dspsnum -= 20;
+                    dspsnum -= 5;
                 }
                 l1000dispense(dspsnum);
                 super.sleep(1500);

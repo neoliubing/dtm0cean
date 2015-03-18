@@ -16,18 +16,18 @@
         <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\eventbus-38acce0b67f41035a60f13f11e4161fdc6b17992.jar" />
     </item>
     <item
-        jar="D:\Code\dtm0cean\app\libs\android-async-http-1.4.4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3bae85a076241828810bf8fbcc12e5891d5fc34c">
-        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.4-becb21543ec1f0d3d4fe5861beceb6ef18378c5b.jar" />
-    </item>
-    <item
         jar="D:\Code\dtm0cean\app\libs\umeng-analytics-v5.2.4.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="124e0c15ac2b0b061ad4e68fc6ac0a32f33e2b33">
         <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\umeng-analytics-v5.2.4-d5ff9230f69c9e1027f3b87117cdf40fcc980d88.jar" />
+    </item>
+    <item
+        jar="D:\Code\dtm0cean\app\libs\android-async-http-1.4.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3bae85a076241828810bf8fbcc12e5891d5fc34c">
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.4-becb21543ec1f0d3d4fe5861beceb6ef18378c5b.jar" />
     </item>
     <item
         jar="D:\Code\dtm0cean\app\libs\umeng-update-v2.4.2.jar"
@@ -121,18 +121,18 @@
         <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\classes-745df5a6ccecd1e2a069135b45e58b940afbfe7e.jar" />
     </item>
     <item
-        jar="D:\Code\dtm0cean\app\libs\guava-13.0.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="0d6f22b1e60a2f1ef99e22c9f5fde270b2088365">
-        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\guava-13.0.1-3cf49426aaa168dc8df1d2b980a564625b28f460.jar" />
-    </item>
-    <item
         jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
         <dex dex="D:\Code\viewpager\dtm\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-aa16b3cf885393ef74ba8407c65bcf20627dd05b.jar" />
+    </item>
+    <item
+        jar="D:\Code\dtm0cean\app\libs\guava-13.0.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0d6f22b1e60a2f1ef99e22c9f5fde270b2088365">
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\guava-13.0.1-3cf49426aaa168dc8df1d2b980a564625b28f460.jar" />
     </item>
     <item
         jar="D:\Code\dtm0cean\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
