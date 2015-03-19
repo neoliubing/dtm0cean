@@ -1,5 +1,6 @@
 package com.bitocean.dtm;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.hardware.Camera;
@@ -22,6 +23,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 public class CameraActivity extends BaseTimerActivity {
@@ -123,6 +125,7 @@ public class CameraActivity extends BaseTimerActivity {
 //				saveToSDCard(data);
 				photo.setVisibility(View.GONE);
 				submit.setVisibility(View.VISIBLE);
+                camera.stopPreview();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -148,41 +151,40 @@ public class CameraActivity extends BaseTimerActivity {
 //			parameters.setPreviewSize(width, height);
 //			parameters.setPictureSize(width, height);
 //            camera.setParameters(parameters);
-//            try {
-//                int PreviewWidth = 0;
-//                int PreviewHeight = 0;
-//                WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);//获取窗口的管理器
-//                Display display = wm.getDefaultDisplay();//获得窗口里面的屏幕
-//                Camera.Parameters parameters  = mCamera.getParameters();
-//                // 选择合适的预览尺寸
-//                List<Camera.Size> sizeList = parameters.getSupportedPreviewSizes();
-//
-//                // 如果sizeList只有一个我们也没有必要做什么了，因为就他一个别无选择
-//                if (sizeList.size() > 1) {
-//                    Iterator<Camera.Size> itor = sizeList.iterator();
-//                    while (itor.hasNext()) {
-//                        Camera.Size cur = itor.next();
-//                        if (cur.width >= PreviewWidth
-//                                && cur.height >= PreviewHeight) {
-//                            PreviewWidth = cur.width;
-//                            PreviewHeight = cur.height;
-//                            break;
-//                        }
-//                    }
-//                }
-//                parameters.setPreviewSize(1000, 1000); //获得摄像区域的大小
-////        	     parameters.setPreviewFrameRate(3);//每秒3帧  每秒从摄像头里面获得3个画面
-////        	     parameters.setPictureFormat(PixelFormat.JPEG);//设置照片输出的格式
-//                parameters.set("jpeg-quality", 85);//设置照片质量
-//                parameters.setPictureSize(1000, 1000);//设置拍出来的屏幕大小
-//                //
-//                mCamera.setParameters(parameters);//把上面的设置 赋给摄像头
-//                mCamera.setPreviewDisplay(holder);//把摄像头获得画面显示在SurfaceView控件里面
-//                mCamera.startPreview();//开始预览
-////        	     mPreviewRunning = true;
-//            } catch (IOException e) {
-////        	     Log.e(TAG, e.toString());
-//            }
+
+            try {
+                int PreviewWidth = 0;
+                int PreviewHeight = 0;
+                Camera.Parameters parameters  = camera.getParameters();
+                // 选择合适的预览尺寸
+                List<Camera.Size> sizeList = parameters.getSupportedPreviewSizes();
+
+                // 如果sizeList只有一个我们也没有必要做什么了，因为就他一个别无选择
+                if (sizeList.size() > 1) {
+                    Iterator<Camera.Size> itor = sizeList.iterator();
+                    while (itor.hasNext()) {
+                        Camera.Size cur = itor.next();
+                        if (cur.width >= PreviewWidth
+                                && cur.height >= PreviewHeight) {
+                            PreviewWidth = cur.width;
+                            PreviewHeight = cur.height;
+                            break;
+                        }
+                    }
+                }
+                parameters.setPreviewSize(1920, 1080); //获得摄像区域的大小
+//        	     parameters.setPreviewFrameRate(3);//每秒3帧  每秒从摄像头里面获得3个画面
+//        	     parameters.setPictureFormat(PixelFormat.JPEG);//设置照片输出的格式
+                parameters.set("jpeg-quality", 85);//设置照片质量
+                parameters.setPictureSize(1920, 1080);//设置拍出来的屏幕大小
+                //
+                camera.setParameters(parameters);//把上面的设置 赋给摄像头
+                camera.setPreviewDisplay(holder);//把摄像头获得画面显示在SurfaceView控件里面
+                camera.startPreview();//开始预览
+//        	     mPreviewRunning = true;
+            } catch (IOException e) {
+//        	     Log.e(TAG, e.toString());
+            }
         }
 
 		@Override

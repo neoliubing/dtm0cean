@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bitocean.dtm"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:name="com.bitocean.dtm.BitOceanATMApp"
+        android:allowBackup="false"
+        android:icon="@drawable/logo"
+        android:persistent="true" >
+        <activity
+            android:name="com.bitocean.dtm.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.bitocean.dtm.SettingActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bitocean.dtm.UserActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bitocean.dtm.TradeModeActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bitocean.dtm.BuyQRActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bitocean.dtm.BuyWalletActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bitocean.dtm.SellActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bitocean.dtm.RedeemQRActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bitocean.dtm.QrCaptureActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bitocean.dtm.CameraActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bitocean.dtm.InfoActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bitocean.dtm.LanguageActivity"
+            android:configChanges="locale"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bitocean.dtm.DownloadApkActivity"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="application/cn.trinea.download.file" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.bitocean.dtm.service.ATMService"
+            android:exported="false"
+            android:persistent="true" />
+
+        <receiver android:name="com.bitocean.dtm.service.ATMReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="com.bitocean.dtm.db.DBContentProvider"
+            android:authorities="com.bitocean.dtm.db.provider" />
+        <!-- umeng -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="54f16b8bfd98c54eab0008f8" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="12:34:56:78:90" />
+
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService" />
+
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- umeng -->
+        <meta-data
+            android:name="DTM_UUID"
+            android:value="15yMMUH8DnKD6k3Wdu3poV5dX3LRoahKx8" />
+        <meta-data
+            android:name="DTM_CURRENCY"
+            android:value="CNY" />
+        <meta-data
+            android:name="DTM_STATE"
+            android:value="CHINA" />
+        <meta-data
+            android:name="DTM_OPERATORS"
+            android:value="BITOCEAN" />
+        <meta-data
+            android:name="DTM_OPERATORS_PHONE"
+            android:value="010-10010010" />
+        <meta-data
+            android:name="DTM_BOX_IN_CASH"
+            android:value="1" />
+        <meta-data
+            android:name="DTM_BOX_OUT_CASH"
+            android:value="1" />
+    </application>
+
+</manifest>
