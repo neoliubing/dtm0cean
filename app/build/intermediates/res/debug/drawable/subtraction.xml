@@ -4,4 +4,4 @@
     <item android:drawable="@drawable/subtraction_press" android:state_pressed="true"/>
     <item android:drawable="@drawable/subtraction_normal" android:state_enabled="false"/>
 
-</selector><!-- From: file:/Users/liubing/AndroidStudioProjects/dtm0cean/app/src/main/res/drawable/subtraction.xml -->
+</selector><!-- From: file:/D:/Code/dtm0cean/app/src/main/res/drawable/subtraction.xml -->

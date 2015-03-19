@@ -164,4 +164,4 @@
         android:layout_height="@dimen/height_bottom_text_layout"
         android:layout_alignParentBottom="true" />
 
-</RelativeLayout><!-- From: file:/Users/liubing/AndroidStudioProjects/dtm0cean/app/src/main/res/layout/fragment_scan_user_key.xml -->
+</RelativeLayout><!-- From: file:/D:/Code/dtm0cean/app/src/main/res/layout/fragment_scan_user_key.xml -->

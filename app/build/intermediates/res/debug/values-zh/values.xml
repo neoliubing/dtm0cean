@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/liubing/AndroidStudioProjects/dtm0cean/app/src/main/res/values-zh/strings.xml -->
+    <!-- From: file:/D:/Code/dtm0cean/app/src/main/res/values-zh/strings.xml -->
     <eat-comment/>
     <string name="admin_login_fail_1">管理员账户不存在</string>
     <string name="admin_login_fail_2">管理员密码错误</string>

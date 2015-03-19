@@ -2,95 +2,95 @@
 <items version="2" >
 
     <item
-        jar="/Users/liubing/AndroidStudioProjects/dtm0cean/app/libs/android-integration-2.3.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="349e1c0a77aa3a0b069e84b4507a04866319073f">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/android-integration-2.3.0-54e85eed7442d5665cb05954055d87d7ace8f0ae.jar" />
-    </item>
-    <item
-        jar="/Users/liubing/AndroidStudioProjects/dtm0cean/app/libs/eventbus.jar"
+        jar="D:\Code\dtm0cean\app\libs\eventbus.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="bce1c8d061ecc7d7664ae13bb5d29543ff93ca52">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/eventbus-ff4020990ea0f60b7c7ee7a3015a6a83496ffff3.jar" />
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\eventbus-38acce0b67f41035a60f13f11e4161fdc6b17992.jar" />
     </item>
     <item
-        jar="/Users/liubing/AndroidStudioProjects/dtm0cean/app/libs/android-async-http-1.4.4.jar"
+        jar="D:\Code\dtm0cean\app\libs\android-async-http-1.4.4.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="3bae85a076241828810bf8fbcc12e5891d5fc34c">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.4-e67dcb3273cd7b2d0cbdccd9c9333f9703f026ef.jar" />
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.4-becb21543ec1f0d3d4fe5861beceb6ef18378c5b.jar" />
     </item>
     <item
-        jar="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-faf8202b40a1ed6218635a23fc0e450fbee87085.jar" />
-    </item>
-    <item
-        jar="/Users/liubing/AndroidStudioProjects/dtm0cean/app/libs/trinea.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="210e8f1b5c6c86f4b568deb85dbf8d1fb513cbaa">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/trinea-8392e1697ebafbc7342d6d11baf88c190654b64d.jar" />
-    </item>
-    <item
-        jar="/Users/liubing/AndroidStudioProjects/dtm0cean/app/libs/guava-13.0.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="0d6f22b1e60a2f1ef99e22c9f5fde270b2088365">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/guava-13.0.1-c478e2d5c442f77512270880001ef1bfe3ab4715.jar" />
-    </item>
-    <item
-        jar="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/classes-147f995fc8d1f12421bfdb1d7736fdfc25804ef8.jar" />
-    </item>
-    <item
-        jar="/Users/liubing/Downloads/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-43598157edc4dc4849ed4890f628925075a54820.jar" />
-    </item>
-    <item
-        jar="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/classes-0c4252bb18efc7668eda67058acc63bbde823c89.jar" />
-    </item>
-    <item
-        jar="/Users/liubing/AndroidStudioProjects/dtm0cean/app/libs/volley.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="f038c6fc1df192afe6b5aef3c0dbb6fc2e7478f1">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/volley-e3ddcfa3fa1a01372fb3119484a6d85fab056d26.jar" />
-    </item>
-    <item
-        jar="/Users/liubing/AndroidStudioProjects/dtm0cean/app/libs/core-2.3.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9fd4bcf5408ca723ba816216ea1f9a7ef7cba527">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/core-2.3.0-f3ba98d300724095529d7ece683dab0a6027bebe.jar" />
-    </item>
-    <item
-        jar="/Users/liubing/AndroidStudioProjects/dtm0cean/app/libs/umeng-analytics-v5.2.4.jar"
+        jar="D:\Code\dtm0cean\app\libs\umeng-analytics-v5.2.4.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="124e0c15ac2b0b061ad4e68fc6ac0a32f33e2b33">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/umeng-analytics-v5.2.4-907f127812f3986d7fb5c878835480d0af98a3c7.jar" />
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\umeng-analytics-v5.2.4-d5ff9230f69c9e1027f3b87117cdf40fcc980d88.jar" />
     </item>
     <item
-        jar="/Users/liubing/AndroidStudioProjects/dtm0cean/app/libs/umeng-update-v2.4.2.jar"
+        jar="D:\Code\dtm0cean\app\libs\umeng-update-v2.4.2.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="ee700e317f574886dc0a236b801f219df6fbd26d">
-        <dex dex="/Users/liubing/AndroidStudioProjects/dtm0cean/app/build/intermediates/pre-dexed/debug/umeng-update-v2.4.2-751d5fe40842f4c46b13ff0e492ecdaecf0178a5.jar" />
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\umeng-update-v2.4.2-bce99d0b57b5869baf42d086b276cfe08509367c.jar" />
+    </item>
+    <item
+        jar="D:\Code\dtm0cean\app\libs\volley.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f038c6fc1df192afe6b5aef3c0dbb6fc2e7478f1">
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\volley-8dc8cf2282acfd5daf29b1502d7aa3f5f99657a1.jar" />
+    </item>
+    <item
+        jar="D:\Code\dtm0cean\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-fb8caf3e2c898a011a8353b596ad4c39e72cfcfb.jar" />
+    </item>
+    <item
+        jar="D:\Code\dtm0cean\app\libs\trinea.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="210e8f1b5c6c86f4b568deb85dbf8d1fb513cbaa">
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\trinea-096e93c7dce3735cd157f371dea65cde76876a05.jar" />
+    </item>
+    <item
+        jar="D:\Code\dtm0cean\app\libs\core-2.3.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9fd4bcf5408ca723ba816216ea1f9a7ef7cba527">
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\core-2.3.0-3d5c126c37f1adf86654c5182ad8dafb92c3a948.jar" />
+    </item>
+    <item
+        jar="D:\Code\dtm0cean\app\libs\android-integration-2.3.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="349e1c0a77aa3a0b069e84b4507a04866319073f">
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\android-integration-2.3.0-b8be9a1dc8c088da2d8e3f782135222b54330c02.jar" />
+    </item>
+    <item
+        jar="D:\Code\dtm0cean\app\libs\guava-13.0.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0d6f22b1e60a2f1ef99e22c9f5fde270b2088365">
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\guava-13.0.1-3cf49426aaa168dc8df1d2b980a564625b28f460.jar" />
+    </item>
+    <item
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-aa16b3cf885393ef74ba8407c65bcf20627dd05b.jar" />
+    </item>
+    <item
+        jar="D:\Code\dtm0cean\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\classes-e0b3bf896c1db0f4b8c99f822b395b47b921220b.jar" />
+    </item>
+    <item
+        jar="D:\Code\dtm0cean\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\classes-71316921b916a3fe7e7024e95a5bd33f80e61004.jar" />
     </item>
 
 </items>

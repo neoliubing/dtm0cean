@@ -28,183 +28,148 @@ import java.util.List;
 
 public class CameraActivity extends BaseTimerActivity {
 
-	// public CameraPreview mPreview;
-	public static boolean isCameraPicture = false;
-	public Button submit, photo, cancel;
-	public TextView timer;
-	public static String fileType;
-	private Camera camera;
+    // public CameraPreview mPreview;
+    public static boolean isCameraPicture = false;
+    public Button submit, photo, cancel;
+    public TextView timer;
+    public static String fileType;
+    private Camera camera;
     private static byte[] data;
-	private Camera.Parameters parameters = null;
-	private static String path;
+    private Camera.Parameters parameters = null;
+    private static String path;
 
-	@Override
-	protected void onCreate(Bundle arg0) {
-		super.onCreate(arg0);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    @Override
+    protected void onCreate(Bundle arg0) {
+        super.onCreate(arg0);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-		if (getIntent() != null) {
-			fileType = getIntent().getStringExtra("fileType");
-		}
+        if (getIntent() != null) {
+            fileType = getIntent().getStringExtra("fileType");
+        }
 
-		setContentView(R.layout.activity_camera);
-		submit = (Button) findViewById(R.id.submit);
-		submit.setOnClickListener(new OnClickListener() {
+        setContentView(R.layout.activity_camera);
+        submit = (Button) findViewById(R.id.submit);
+        submit.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
+            @Override
+            public void onClick(View arg0) {
+                // TODO Auto-generated method stub
                 try {
                     saveToSDCard(CameraActivity.data);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
                 Intent data = new Intent();
-				data.putExtra("url", path);
-				CameraActivity.this.setResult(RESULT_OK, data);
-				finish();
-			}
+                data.putExtra("url", path);
+                CameraActivity.this.setResult(RESULT_OK, data);
+                finish();
+            }
 
-		});
-		photo = (Button) findViewById(R.id.photo);
-		photo.setOnClickListener(new OnClickListener() {
+        });
+        photo = (Button) findViewById(R.id.photo);
+        photo.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				isCameraPicture = true;
-				camera.autoFocus(new AutoFocusCallback() {
-					@Override
-					public void onAutoFocus(boolean success, Camera camera) {
-						// TODO Auto-generated method stub
-						camera.takePicture(null, null, new MyPictureCallback());
-					}
-				});
-			}
-
-		});
-		cancel = (Button) findViewById(R.id.cancel);
-		cancel.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				if (isCameraPicture) {
-					photo.setVisibility(View.VISIBLE);
-					submit.setVisibility(View.GONE);
-					camera.startPreview();
-					isCameraPicture = false;
-				} else {
-					CameraActivity.this.setResult(
-							CameraActivity.this.RESULT_CANCELED, null);
-					finish();
-				}
-			}
-
-		});
-
-		SurfaceView surfaceView = (SurfaceView) this
-				.findViewById(R.id.surfaceView);
-		surfaceView.getHolder()
-				.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-		surfaceView.getHolder().setKeepScreenOn(true);
-		surfaceView.getHolder().addCallback(new SurfaceCallback());
-	}
-
-//	Bundle bundle = null;
-	private final class MyPictureCallback implements PictureCallback {
-		@Override
-		public void onPictureTaken(byte[] data, Camera camera) {
-			try {
-//				bundle = new Bundle();
-//				bundle.putByteArray("bytes", data);
-                CameraActivity.data = data;
-//				saveToSDCard(data);
-				photo.setVisibility(View.GONE);
-				submit.setVisibility(View.VISIBLE);
-                camera.stopPreview();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
-	private static void saveToSDCard(byte[] data) throws IOException {
-		path = "/sdcard/" + fileType
-		+ new SimpleDateFormat("yyyyMMddHHmmss")
-		.format(new Date()) + ".jpg";
-		File file = new File(path);
-		FileOutputStream outputStream = new FileOutputStream(file);
-		outputStream.write(data);
-		outputStream.close();
-	}
-
-	private final class SurfaceCallback implements Callback {
-		@Override
-		public void surfaceChanged(SurfaceHolder holder, int format, int width,
-				int height) {
-//			parameters = camera.getParameters();
-//			parameters.setPictureFormat(PixelFormat.JPEG);
-//			parameters.setPreviewSize(width, height);
-//			parameters.setPictureSize(width, height);
-//            camera.setParameters(parameters);
-
-            try {
-                int PreviewWidth = 0;
-                int PreviewHeight = 0;
-                Camera.Parameters parameters  = camera.getParameters();
-                // 选择合适的预览尺寸
-                List<Camera.Size> sizeList = parameters.getSupportedPreviewSizes();
-
-                // 如果sizeList只有一个我们也没有必要做什么了，因为就他一个别无选择
-                if (sizeList.size() > 1) {
-                    Iterator<Camera.Size> itor = sizeList.iterator();
-                    while (itor.hasNext()) {
-                        Camera.Size cur = itor.next();
-                        if (cur.width >= PreviewWidth
-                                && cur.height >= PreviewHeight) {
-                            PreviewWidth = cur.width;
-                            PreviewHeight = cur.height;
-                            break;
-                        }
+            @Override
+            public void onClick(View arg0) {
+                // TODO Auto-generated method stub
+                isCameraPicture = true;
+                camera.autoFocus(new AutoFocusCallback() {
+                    @Override
+                    public void onAutoFocus(boolean success, Camera camera) {
+                        // TODO Auto-generated method stub
+                        camera.takePicture(null, null, new MyPictureCallback());
                     }
+                });
+            }
+
+        });
+        cancel = (Button) findViewById(R.id.cancel);
+        cancel.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                // TODO Auto-generated method stub
+                if (isCameraPicture) {
+                    photo.setVisibility(View.VISIBLE);
+                    submit.setVisibility(View.GONE);
+                    camera.startPreview();
+                    isCameraPicture = false;
+                } else {
+                    CameraActivity.this.setResult(
+                            CameraActivity.this.RESULT_CANCELED, null);
+                    finish();
                 }
-                parameters.setPreviewSize(1920, 1080); //获得摄像区域的大小
-//        	     parameters.setPreviewFrameRate(3);//每秒3帧  每秒从摄像头里面获得3个画面
-//        	     parameters.setPictureFormat(PixelFormat.JPEG);//设置照片输出的格式
-                parameters.set("jpeg-quality", 85);//设置照片质量
-                parameters.setPictureSize(1920, 1080);//设置拍出来的屏幕大小
-                //
-                camera.setParameters(parameters);//把上面的设置 赋给摄像头
+            }
+
+        });
+
+        SurfaceView surfaceView = (SurfaceView) this
+                .findViewById(R.id.surfaceView);
+        surfaceView.getHolder()
+                .setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+        surfaceView.getHolder().setKeepScreenOn(true);
+        surfaceView.getHolder().addCallback(new SurfaceCallback());
+    }
+
+    private final class MyPictureCallback implements PictureCallback {
+        @Override
+        public void onPictureTaken(byte[] data, Camera camera) {
+            try {
+                CameraActivity.data = data;
+                photo.setVisibility(View.GONE);
+                submit.setVisibility(View.VISIBLE);
+                camera.stopPreview();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private static void saveToSDCard(byte[] data) throws IOException {
+        path = "/sdcard/" + fileType
+                + new SimpleDateFormat("yyyyMMddHHmmss")
+                .format(new Date()) + ".jpg";
+        File file = new File(path);
+        FileOutputStream outputStream = new FileOutputStream(file);
+        outputStream.write(data);
+        outputStream.close();
+    }
+
+    private final class SurfaceCallback implements Callback {
+        @Override
+        public void surfaceChanged(SurfaceHolder holder, int format, int width,
+                                   int height) {
+            parameters.setPreviewSize(1920, 1080); //获得摄像区域的大小
+            parameters.set("jpeg-quality", 85);//设置照片质量
+            parameters.setPictureSize(1920, 1080);//设置拍出来的屏幕大小
+            camera.setParameters(parameters);//把上面的设置 赋给摄像头
+            try {
                 camera.setPreviewDisplay(holder);//把摄像头获得画面显示在SurfaceView控件里面
-                camera.startPreview();//开始预览
-//        	     mPreviewRunning = true;
             } catch (IOException e) {
-//        	     Log.e(TAG, e.toString());
+                e.printStackTrace();
+            }
+            camera.startPreview();//开始预览
+
+        }
+
+        @Override
+        public void surfaceCreated(SurfaceHolder holder) {
+            try {
+                camera = Camera.open();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 
-		@Override
-		public void surfaceCreated(SurfaceHolder holder) {
-			try {
-				camera = Camera.open();
-//				camera.setPreviewDisplay(holder);
-//				camera.setDisplayOrientation(Surface.ROTATION_0);
-//				camera.startPreview();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-		@Override
-		public void surfaceDestroyed(SurfaceHolder holder) {
-			if (camera != null) {
-				camera.release();
-				camera = null;
-			}
-		}
-	}
+        @Override
+        public void surfaceDestroyed(SurfaceHolder holder) {
+            if (camera != null) {
+                camera.release();
+                camera = null;
+            }
+        }
+    }
 }

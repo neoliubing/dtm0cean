@@ -39,20 +39,20 @@ public final class CameraManager {
     }
 
     public Camera open(final SurfaceHolder holder, final boolean continuousAutoFocus) throws IOException {
-        camera = Camera.open();
-//        camera = null;
-//        if (camera == null) {
-//            final int cameraCount = Camera.getNumberOfCameras();
-//            final CameraInfo cameraInfo = new CameraInfo();
-//            // search for front-facing camera
-//            for (int i = 0; i < cameraCount; i++) {
-//                Camera.getCameraInfo(i, cameraInfo);
-//                if (cameraInfo.facing == CameraInfo.CAMERA_FACING_FRONT) {
-//                    camera = Camera.open(i);
-//                    break;
-//                }
-//            }
-//        }
+//        camera = Camera.open();
+        camera = null;
+        if (camera == null) {
+            final int cameraCount = Camera.getNumberOfCameras();
+            final CameraInfo cameraInfo = new CameraInfo();
+            // search for front-facing camera
+            for (int i = 0; i < cameraCount; i++) {
+                Camera.getCameraInfo(i, cameraInfo);
+                if (cameraInfo.facing == CameraInfo.CAMERA_FACING_FRONT) {
+                    camera = Camera.open(i);
+                    break;
+                }
+            }
+        }
 
         camera.setPreviewDisplay(holder);
 

@@ -120,22 +120,6 @@ public class ProtocolDataInput {
                 return;
 
             AppManager.typeRateStructs.rateStructs.clear();
-            for (int i = 0; i < arrays.length(); i++) {
-                JSONObject item = (JSONObject) arrays.opt(i);
-                RateStruct struct = new RateStruct();
-                struct.bit_type = item.getString("bit_type");
-                struct.dtm_currency = item.getString("dtm_currency");
-                struct.currency_buy = item.getDouble("currency_buy");
-                struct.currency_sell = item.getDouble("currency_sell");
-                struct.bit_buy = item.getDouble("bit_buy");
-                struct.bit_sell = item.getDouble("bit_sell");
-                struct.threshold_buy_min = item.getInt("threshold_buy_min");
-                struct.threshold_buy_max = item.getInt("threshold_buy_max");
-                struct.threshold_sell_min = item.getInt("threshold_sell_min");
-                struct.threshold_sell_max = item.getInt("threshold_sell_max");
-                AppManager.typeRateStructs.currency_typeString = struct.dtm_currency;
-                AppManager.typeRateStructs.rateStructs.add(struct);
-            }
 
             if (obj.getInt("lock") == 0) {
                 AppManager.isLockDTM = false;
@@ -149,6 +133,29 @@ public class ProtocolDataInput {
                 de.greenrobot.event.EventBus.getDefault()
                         .post(new ATMBroadCastEvent(
                                 ATMBroadCastEvent.EVENT_DTM_LOCK));
+            }
+
+            for (int i = 0; i < arrays.length(); i++) {
+                JSONObject item = (JSONObject) arrays.opt(i);
+                RateStruct struct = new RateStruct();
+                struct.bit_type = item.getString("bit_type");
+                struct.dtm_currency = item.getString("dtm_currency");
+                struct.currency_buy = item.getDouble("currency_buy");
+                struct.currency_sell = item.getDouble("currency_sell");
+                struct.bit_buy = item.getDouble("bit_buy");
+                struct.bit_sell = item.getDouble("bit_sell");
+                struct.threshold_buy_min = item.getInt("threshold_buy_min");
+                struct.threshold_buy_max = item.getInt("threshold_buy_max");
+                if(struct.threshold_buy_max < AppManager.DTM_BOX_IN_CASH){
+                    AppManager.isLockDTM = true;
+                    de.greenrobot.event.EventBus.getDefault()
+                            .post(new ATMBroadCastEvent(
+                                    ATMBroadCastEvent.EVENT_DTM_LOCK));
+                }
+                struct.threshold_sell_min = item.getInt("threshold_sell_min");
+                struct.threshold_sell_max = item.getInt("threshold_sell_max");
+                AppManager.typeRateStructs.currency_typeString = struct.dtm_currency;
+                AppManager.typeRateStructs.rateStructs.add(struct);
             }
             return;
         } catch (JSONException ex) {

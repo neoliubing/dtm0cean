@@ -149,4 +149,4 @@
         android:layout_height="@dimen/height_bottom_text_layout"
         android:layout_alignParentBottom="true" />
 
-</RelativeLayout><!-- From: file:/Users/liubing/AndroidStudioProjects/dtm0cean/app/src/main/res/layout/fragment_buy_qr_flow_display.xml -->
+</RelativeLayout><!-- From: file:/D:/Code/dtm0cean/app/src/main/res/layout/fragment_buy_qr_flow_display.xml -->
