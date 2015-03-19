@@ -163,8 +163,8 @@ public class ProtocolDataOutput {
             output.put("user_id", user_id);
             output.put("dtm_currency", AppManager.DTM_CURRENCY);
             output.put("currency_num", currency_num);
-            output.put("qraddress", "16GyuTgLzcfcHwYHacfiG5WW73c1mSreR3");
-//            output.put("qraddress", bitcoin_qr.substring(bitcoin_qr.indexOf(":")+1, bitcoin_qr.indexOf("?")));
+//            output.put("qraddress", "16GyuTgLzcfcHwYHacfiG5WW73c1mSreR3");
+            output.put("qraddress", bitcoin_qr.substring(bitcoin_qr.indexOf(":")+1, bitcoin_qr.indexOf("?")));
             output.put("amount", amount);
             output.put("tradeid", tradeid);
             output.put("dtm_box_out_cash", AppManager.DTM_BOX_OUT_CASH);
@@ -182,7 +182,7 @@ public class ProtocolDataOutput {
             throws JSONException {
         try {
             JSONObject output = new JSONObject();
-            output.put("user_public_key", "16GyuTgLzcfcHwYHacfiG5WW73c1mSreR3");
+            output.put("user_public_key", user_public_key);//"16GyuTgLzcfcHwYHacfiG5WW73c1mSreR3"
             output.put("dtm_uuid", AppManager.DTM_UUID);
             output.put("bit_type", "btc");
             output.put("user_id", user_id);
