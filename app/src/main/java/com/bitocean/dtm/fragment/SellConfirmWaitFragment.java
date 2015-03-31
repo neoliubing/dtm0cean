@@ -104,20 +104,22 @@ public class SellConfirmWaitFragment extends NodeFragment {
             return;
         }
 
-        Thread sellThread = new Thread() {
-            public void run() {
-                while (isLoop) {
-                    NetServiceManager.getInstance().SellBitcoin(AppManager.getUserId(), currency_num, bitcoin_qr, bit_num, tradeid);
-                    try {
-                        sleep(6000);
-                    } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-                }
-            }
-        };
-        sellThread.start();
+        NetServiceManager.getInstance().SellBitcoin(AppManager.getUserId(), currency_num, bitcoin_qr, bit_num, tradeid);
+
+//        Thread sellThread = new Thread() {
+//            public void run() {
+//                while (isLoop) {
+//                    NetServiceManager.getInstance().SellBitcoin(AppManager.getUserId(), currency_num, bitcoin_qr, bit_num, tradeid);
+//                    try {
+//                        sleep(6000);
+//                    } catch (InterruptedException e) {
+//                        // TODO Auto-generated catch block
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        };
+//        sellThread.start();
     }
 
     public void onEventMainThread(PollingBroadCastEvent event) {

@@ -31,8 +31,10 @@ public class ProtocolDataInput {
         try {
 
             LoginAdminStruct struct = new LoginAdminStruct();
-            struct.resutlString = obj.getString("result");
             struct.reason = obj.getInt("reason");
+            struct.resutlString = obj.getString("result");
+            if("fail".equals(struct.resutlString))
+                return struct;
             struct.update_infoString = obj.getString("info");
             struct.update_linkString = obj.getString("link");
             struct.public_keyString = obj.getString("public_key");
@@ -53,9 +55,9 @@ public class ProtocolDataInput {
         }
         try {
             LoginUserStruct struct = new LoginUserStruct();
-            struct.resutlString = obj.getString("result");
             struct.reason = obj.getInt("reason");
-            if(struct.resutlString.equals("fail"))
+            struct.resutlString = obj.getString("result");
+            if("fail".equals(struct.resutlString))
                 return struct;
             struct.userTypeString = obj.getString("user_type");
             struct.levelString = obj.getString("level");
@@ -146,12 +148,12 @@ public class ProtocolDataInput {
                 struct.bit_sell = item.getDouble("bit_sell");
                 struct.threshold_buy_min = item.getInt("threshold_buy_min");
                 struct.threshold_buy_max = item.getInt("threshold_buy_max");
-                if(struct.threshold_buy_max < AppManager.DTM_BOX_IN_CASH){
-                    AppManager.isLockDTM = true;
-                    de.greenrobot.event.EventBus.getDefault()
-                            .post(new ATMBroadCastEvent(
-                                    ATMBroadCastEvent.EVENT_DTM_LOCK));
-                }
+//                if(struct.threshold_buy_max < AppManager.DTM_BOX_IN_CASH){
+//                    AppManager.isLockDTM = true;
+//                    de.greenrobot.event.EventBus.getDefault()
+//                            .post(new ATMBroadCastEvent(
+//                                    ATMBroadCastEvent.EVENT_DTM_LOCK));
+//                }
                 struct.threshold_sell_min = item.getInt("threshold_sell_min");
                 struct.threshold_sell_max = item.getInt("threshold_sell_max");
                 AppManager.typeRateStructs.currency_typeString = struct.dtm_currency;
@@ -174,8 +176,10 @@ public class ProtocolDataInput {
         }
         try {
             RedeemConfirmStruct struct = new RedeemConfirmStruct();
-            struct.resutlString = obj.getString("result");
             struct.reason = obj.getInt("reason");
+            struct.resutlString = obj.getString("result");
+            if("fail".equals(struct.resutlString))
+                return struct;
             struct.currency_type = obj.getString("dtm_currency");
             struct.currency_num = obj.getInt("currency_num");
             return struct;
@@ -195,8 +199,10 @@ public class ProtocolDataInput {
         }
         try {
             SellBitcoinQRStruct struct = new SellBitcoinQRStruct();
-            struct.resutlString = obj.getString("result");
             struct.reason = obj.getInt("reason");
+            struct.resutlString = obj.getString("result");
+            if("fail".equals(struct.resutlString))
+                return struct;
             struct.bitcoin_qr = obj.getString("bitcoin_qr");
             struct.tradeid = obj.getString("tradeid");
             struct.quota_num = obj.getInt("fast_threshold");
@@ -217,8 +223,10 @@ public class ProtocolDataInput {
         }
         try {
             SellBitcoinConfirmStruct struct = new SellBitcoinConfirmStruct();
-            struct.resutlString = obj.getString("result");
             struct.reason = obj.getInt("reason");
+            struct.resutlString = obj.getString("result");
+            if("fail".equals(struct.resutlString))
+                return struct;
             struct.dtm_currency = obj.getString("dtm_currency");
             struct.currency_num = obj.getInt("currency_num");
             struct.redeem_code = obj.getString("redeem_code");
@@ -242,8 +250,10 @@ public class ProtocolDataInput {
         }
         try {
             BuyBitcoinQRStruct struct = new BuyBitcoinQRStruct();
-            struct.resutlString = obj.getString("result");
             struct.reason = obj.getInt("reason");
+            struct.resutlString = obj.getString("result");
+            if("fail".equals(struct.resutlString))
+                return struct;
             struct.user_public_key = obj.getString("user_public_key");
             struct.bit_type = obj.getString("bit_type");
             struct.trans_id = obj.getString("transid");
@@ -267,8 +277,10 @@ public class ProtocolDataInput {
         }
         try {
             BuyBitcoinPrintWalletStruct struct = new BuyBitcoinPrintWalletStruct();
-            struct.resutlString = obj.getString("result");
             struct.reason = obj.getInt("reason");
+            struct.resutlString = obj.getString("result");
+            if("fail".equals(struct.resutlString))
+                return struct;
             struct.wallet_public_key = obj.getString("wallet_public_key");
             struct.wallet_private_key = obj.getString("wallet_private_key");
             struct.bit_type = obj.getString("bit_type");

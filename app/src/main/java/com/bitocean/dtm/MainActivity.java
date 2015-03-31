@@ -33,16 +33,6 @@ public class MainActivity extends BaseTimerActivity {
         initUI();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
     private void initUI() {
         try {
             Process proc = Runtime.getRuntime().exec(new String[]{"sh", "startservice", "-n", "com.android.systemui/.SystemUIService"});

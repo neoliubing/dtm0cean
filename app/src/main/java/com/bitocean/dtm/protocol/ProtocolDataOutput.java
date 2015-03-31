@@ -100,10 +100,10 @@ public class ProtocolDataOutput {
             throws JSONException {
         try {
             JSONObject output = new JSONObject();
-            output.put("redeem_code", redeemCode);
+            output.put("redeem_code", redeemCode);//209dda278fffc2baba20b9905f5b1c250a130fbcd678acfa8ddb9a154fc96607
             output.put("dtm_uuid", AppManager.DTM_UUID);
             output.put("dtm_currency", AppManager.DTM_CURRENCY);
-            output.put("txid", txid);
+            output.put("txid", txid);//5f6f23151e67730e18754665f35f587cf0a42fda88e79e33689ebd204efd788d
             return output;
         } catch (JSONException ex) {
             throw new RuntimeException(ex);
