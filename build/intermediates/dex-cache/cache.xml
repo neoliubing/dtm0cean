@@ -9,18 +9,18 @@
         <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\eventbus-38acce0b67f41035a60f13f11e4161fdc6b17992.jar" />
     </item>
     <item
-        jar="D:\Code\dtm0cean\app\libs\umeng-analytics-v5.2.4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="124e0c15ac2b0b061ad4e68fc6ac0a32f33e2b33">
-        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\umeng-analytics-v5.2.4-d5ff9230f69c9e1027f3b87117cdf40fcc980d88.jar" />
-    </item>
-    <item
         jar="D:\Code\dtm0cean\app\libs\android-async-http-1.4.4.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="3bae85a076241828810bf8fbcc12e5891d5fc34c">
         <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.4-becb21543ec1f0d3d4fe5861beceb6ef18378c5b.jar" />
+    </item>
+    <item
+        jar="D:\Code\dtm0cean\app\libs\umeng-analytics-v5.2.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="124e0c15ac2b0b061ad4e68fc6ac0a32f33e2b33">
+        <dex dex="D:\Code\dtm0cean\app\build\intermediates\pre-dexed\debug\umeng-analytics-v5.2.4-d5ff9230f69c9e1027f3b87117cdf40fcc980d88.jar" />
     </item>
     <item
         jar="D:\Code\dtm0cean\app\libs\umeng-update-v2.4.2.jar"

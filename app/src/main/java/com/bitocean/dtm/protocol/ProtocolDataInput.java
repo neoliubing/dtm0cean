@@ -148,12 +148,12 @@ public class ProtocolDataInput {
                 struct.bit_sell = item.getDouble("bit_sell");
                 struct.threshold_buy_min = item.getInt("threshold_buy_min");
                 struct.threshold_buy_max = item.getInt("threshold_buy_max");
-//                if(struct.threshold_buy_max < AppManager.DTM_BOX_IN_CASH){
-//                    AppManager.isLockDTM = true;
-//                    de.greenrobot.event.EventBus.getDefault()
-//                            .post(new ATMBroadCastEvent(
-//                                    ATMBroadCastEvent.EVENT_DTM_LOCK));
-//                }
+                if(struct.threshold_buy_max < AppManager.DTM_BOX_IN_CASH){
+                    AppManager.isLockDTM = true;
+                    de.greenrobot.event.EventBus.getDefault()
+                            .post(new ATMBroadCastEvent(
+                                    ATMBroadCastEvent.EVENT_DTM_LOCK));
+                }
                 struct.threshold_sell_min = item.getInt("threshold_sell_min");
                 struct.threshold_sell_max = item.getInt("threshold_sell_max");
                 AppManager.typeRateStructs.currency_typeString = struct.dtm_currency;

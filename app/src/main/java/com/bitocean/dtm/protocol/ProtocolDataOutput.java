@@ -59,10 +59,11 @@ public class ProtocolDataOutput {
     }
 
     //获取验证码
-    public static JSONObject verifyCode(String user_id) throws JSONException {
+    public static JSONObject verifyCode(String country_code, String phone) throws JSONException {
         try {
             JSONObject output = new JSONObject();
-            output.put("user_id", user_id);
+            output.put("phone_num", phone);
+            output.put("country_code", country_code);
             output.put("dtm_uuid", AppManager.DTM_UUID);
             return output;
         } catch (JSONException ex) {

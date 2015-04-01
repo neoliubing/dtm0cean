@@ -1,6 +1,7 @@
 package com.bitocean.dtm.fragment;
 
 import java.io.File;
+import java.io.IOException;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
@@ -10,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -27,6 +29,7 @@ import com.bitocean.dtm.service.ATMBroadCastEvent;
 import com.bitocean.dtm.struct.LoginUserStruct;
 import com.bitocean.dtm.struct.RegisterStruct;
 import com.bitocean.dtm.util.Util;
+import com.google.common.io.Files;
 
 import de.greenrobot.event.EventBus;
 
@@ -40,6 +43,9 @@ public class RegisterPassportFragment extends NodeFragment {
     private Bitmap bitmap = null;
     private String filepath;
     private String userIconString;
+
+    private String userIconStringBase64;
+    private String passportStringBase64;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -105,7 +111,7 @@ public class RegisterPassportFragment extends NodeFragment {
                         }
 
                         NetServiceManager.getInstance().registerUser(
-                                struct.user_idString, null, null, null, userIconString, filepath);
+                                struct.user_idString, null, null, null, userIconStringBase64, passportStringBase64);
                         progressDialog = new Util(getActivity())
                                 .showProgressBar(getActivity().getString(
                                         R.string.wait));
@@ -152,6 +158,24 @@ public class RegisterPassportFragment extends NodeFragment {
 
         TextView phone_text = (TextView) v.findViewById(R.id.phone_text);
         phone_text.setText(getString(R.string.print_hot_line) + AppManager.DTM_OPERATORS_PHONE);
+
+        File userIcon = new File(userIconString);
+        byte[] byteUserIconData = new byte[0];
+        try {
+            byteUserIconData = Files.toByteArray(userIcon);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        File passport = new File(filepath);
+        byte[] bytepassportData = new byte[0];
+        try {
+            bytepassportData = Files.toByteArray(passport);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        userIconStringBase64 = new String(Base64.encodeToString(byteUserIconData, Base64.NO_WRAP));
+        passportStringBase64 = new String(Base64.encodeToString(bytepassportData, Base64.NO_WRAP));
     }
 
     private void startCameraActivity() {

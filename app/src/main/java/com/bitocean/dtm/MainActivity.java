@@ -6,6 +6,7 @@ import java.util.TimerTask;
 
 import com.bitocean.dtm.controller.AppManager;
 import com.bitocean.dtm.R;
+import com.bitocean.dtm.controller.NetServiceManager;
 import com.bitocean.dtm.util.Util;
 
 import android.content.Intent;

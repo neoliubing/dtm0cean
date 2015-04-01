@@ -1,9 +1,12 @@
 package com.bitocean.dtm.fragment;
 
 import java.io.File;
+import java.util.Locale;
 
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
@@ -181,7 +184,18 @@ public class RegisterPhoneFragment extends NodeFragment {
             return;
         }
 
-        NetServiceManager.getInstance().verifyCode(phone);
+        Resources resources = getResources();// 获得res资源对象
+        Configuration config = resources.getConfiguration();// 获得设置对象
+        String country_code = null;
+        if ("en".equals(config.locale.toString())) {
+            country_code = "1";
+        } else if ("zh_CN".equals(config.locale.toString())) {
+            country_code = "86";
+        } else if ("ja_JP".equals(config.locale.toString())) {
+            country_code = "81";
+        }
+
+        NetServiceManager.getInstance().verifyCode(country_code, phone);
         progressDialog = new Util(getActivity()).showProgressBar(getActivity()
                 .getString(R.string.wait));
     }

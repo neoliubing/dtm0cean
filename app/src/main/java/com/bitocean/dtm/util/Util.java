@@ -132,6 +132,7 @@ public class Util {
 
                 @Override
                 public void onError(Exception e) {
+                    NetServiceManager.getInstance().UploadHardwareState("out_cash", "on error", AppManager.getCurrentTime());
                     DBTools.getInstance().insertHardwareData(AppManager.getUserId(), "out_cash", AppManager.DTM_UUID, AppManager.getCurrentTime(), e.getMessage().toString());
                     DBTools.getInstance().closeDB();
                     L1000SDKManager.getInstance().end(); // 关闭出钞模块
@@ -180,6 +181,7 @@ public class Util {
             @Override
             public void onError(Exception e) {
                 // 这里写监听到初始化串口出错后的处理
+                NetServiceManager.getInstance().UploadHardwareState("in_cash", "on error", AppManager.getCurrentTime());
                 DBTools.getInstance().insertHardwareData(AppManager.getUserId(), "in_cash", AppManager.DTM_UUID, AppManager.getCurrentTime(), e.getMessage().toString());
                 DBTools.getInstance().closeDB();
             }
@@ -202,6 +204,7 @@ public class Util {
 
             @Override
             public void onError(Exception e) {
+                NetServiceManager.getInstance().UploadHardwareState("print buy qr", "on error", AppManager.getCurrentTime());
                 // 打印出钞凭条失败，跳转至交易失败页面
                 DBTools.getInstance().insertHardwareData(AppManager.getUserId(), "p_buy_qr", AppManager.DTM_UUID, AppManager.getCurrentTime(), e.getMessage().toString());
                 DBTools.getInstance().closeDB();
@@ -227,6 +230,7 @@ public class Util {
 
             @Override
             public void onError(Exception e) {
+                NetServiceManager.getInstance().UploadHardwareState("print buy wallet", "on error", AppManager.getCurrentTime());
                 // 打印出钞凭条失败，跳转至交易失败页面
                 DBTools.getInstance().insertHardwareData(AppManager.getUserId(), "p_buy_wallet", AppManager.DTM_UUID, AppManager.getCurrentTime(), e.getMessage().toString());
                 DBTools.getInstance().closeDB();
@@ -251,6 +255,7 @@ public class Util {
 
             @Override
             public void onError(Exception e) {
+                NetServiceManager.getInstance().UploadHardwareState("print sell", "on error", AppManager.getCurrentTime());
                 DBTools.getInstance().insertHardwareData(AppManager.getUserId(), "p_sell", AppManager.DTM_UUID, AppManager.getCurrentTime(), e.getMessage().toString());
                 DBTools.getInstance().closeDB();
                 // 打印出钞凭条失败，跳转至交易失败页面
@@ -275,6 +280,7 @@ public class Util {
 
             @Override
             public void onError(Exception e) {
+                NetServiceManager.getInstance().UploadHardwareState("print redeem", "on error", AppManager.getCurrentTime());
                 DBTools.getInstance().insertHardwareData(AppManager.getUserId(), "p_redeem", AppManager.DTM_UUID, AppManager.getCurrentTime(), e.getMessage().toString());
                 DBTools.getInstance().closeDB();
                 // 打印出钞凭条失败，跳转至交易失败页面
@@ -299,6 +305,7 @@ public class Util {
 
             @Override
             public void onError(Exception e) {
+                NetServiceManager.getInstance().UploadHardwareState("print trans fail", "on error", AppManager.getCurrentTime());
                 DBTools.getInstance().insertHardwareData(AppManager.getUserId(), "p_tran_fail", AppManager.DTM_UUID, AppManager.getCurrentTime(), e.getMessage().toString());
                 DBTools.getInstance().closeDB();
                 // 打印出钞凭条失败，跳转至交易失败页面

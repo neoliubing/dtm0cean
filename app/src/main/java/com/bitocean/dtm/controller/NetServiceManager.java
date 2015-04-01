@@ -38,31 +38,18 @@ import de.greenrobot.event.EventBus;
 public class NetServiceManager extends BaseManager {
     private static NetServiceManager mInstance;
 
-    private static final String NET_SERVER = "http://infocomm.duapp.com/";
-//    private static final String NET_LOGIN_ADMIN = NET_SERVER
-//            + "loginadmin_bit.py";
-
-    private static final String NET_LOGIN_ADMIN = "http://54.64.141.230:8081/accounts/loginadmin/";
-    private static final String NET_VERIFY_CODE = NET_SERVER + "verify_bit.py";
-//    private static final String NET_REGISTER_USER = NET_SERVER
-//            + "register_bit.py";
-
-    private static final String NET_REGISTER_USER = "http://54.64.141.230:8081/accounts/regisuser/";
-    //    private static final String NET_LOGIN_USER = NET_SERVER
-//            + "loginuser_bit.py";
-    private static final String NET_LOGIN_USER = "http://54.64.141.230:8081/accounts/loginuser/";
-    //    private static final String NET_GET_RATE_LIST = NET_SERVER
-//            + "getrate_bit.py";
-    private static final String NET_GET_RATE_LIST = "http://54.64.141.230:8081/exchange_rate/";
-    private static final String NET_REDEEM_CONFIRM = NET_SERVER
-            + "redeemconfirm_bit.py";
-    private static final String NET_SELL_QR_CODE = "http://54.64.141.230:8081/trade/getsellqr/";
-    private static final String NET_SELL_BITCOIN = "http://54.64.141.230:8081/trade/confirmsell/";
-    //    private static final String NET_BUY_QR_BITCOIN = NET_SERVER + "buy_qr_bit.py";
-    private static final String NET_BUY_QR_BITCOIN = "http://54.64.141.230:8081/trade/qrbuycoin/";
-    //    private static final String NET_BUY_WALLET_BITCOIN = NET_SERVER + "buy_wallet_bit.py";
-    private static final String NET_BUY_WALLET_BITCOIN = "http://54.64.141.230:8081/trade/walletbuycoin/";
-    private static final String NET_HARDWARE_STATE = NET_SERVER + "hardware_state.py";
+    private static final String NET_SERVER = "http://54.64.141.230:8081/";
+    private static final String NET_LOGIN_ADMIN = NET_SERVER + "accounts/loginadmin/";
+    private static final String NET_VERIFY_CODE = NET_SERVER + "trade/sndvcode/";
+    private static final String NET_REGISTER_USER = NET_SERVER + "accounts/regisuser/";
+    private static final String NET_LOGIN_USER = NET_SERVER + "accounts/loginuser/";
+    private static final String NET_GET_RATE_LIST = NET_SERVER + "exchange_rate/";
+    private static final String NET_REDEEM_CONFIRM = NET_SERVER + "trade/redeembycode/";
+    private static final String NET_SELL_QR_CODE = NET_SERVER + "trade/getsellqr/";
+    private static final String NET_SELL_BITCOIN = NET_SERVER + "trade/confirmsell/";
+    private static final String NET_BUY_QR_BITCOIN = NET_SERVER + "trade/qrbuycoin/";
+    private static final String NET_BUY_WALLET_BITCOIN = NET_SERVER + "trade/walletbuycoin/";
+    private static final String NET_HARDWARE_STATE = NET_SERVER + "trade/devicestatus/";
 
     private NetServiceManager(Application app) {
         super(app);
@@ -147,11 +134,11 @@ public class NetServiceManager extends BaseManager {
     }
 
     // 获取注册验证码
-    public void verifyCode(String user_id) {
+    public void verifyCode(String country_code, String phone) {
         RequestQueue mQueue = Volley.newRequestQueue(BitOceanATMApp
                 .getContext());
         try {
-            JSONObject obj = ProtocolDataOutput.verifyCode(user_id);
+            JSONObject obj = ProtocolDataOutput.verifyCode(country_code, phone);
             mQueue.add(new JsonObjectRequest(Method.POST, NET_VERIFY_CODE, obj,
                     new Listener() {
 
@@ -201,21 +188,8 @@ public class NetServiceManager extends BaseManager {
         RequestQueue mQueue = Volley.newRequestQueue(BitOceanATMApp
                 .getContext());
         try {
-            File userIcon = new File(userIconString);
-            byte[] byteUserIconData = new byte[0];
-            try {
-                byteUserIconData = Files.toByteArray(userIcon);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            File passport = new File(passportString);
-            byte[] bytepassportData = new byte[0];
-            try {
-                bytepassportData = Files.toByteArray(passport);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            JSONObject obj = ProtocolDataOutput.register(user_id, user_password, phone, verifyCode, new String(Base64.encodeToString(byteUserIconData, Base64.NO_WRAP)), new String(Base64.encodeToString(bytepassportData, Base64.NO_WRAP)));
+
+            JSONObject obj = ProtocolDataOutput.register(user_id, user_password, phone, verifyCode, userIconString, passportString);
             mQueue.add(new JsonObjectRequest(Method.POST, NET_REGISTER_USER,
                     obj, new Listener() {
 
